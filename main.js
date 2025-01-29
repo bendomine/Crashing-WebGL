@@ -13,7 +13,7 @@ void main(){
 const fragmentSource = `
   precision mediump float;
   float getNumber(float inputNum){
-    return inputNum + 1.;
+    return inputNum + 0.;
   }
   void main(){
     float a = 0.;
