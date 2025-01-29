@@ -13,12 +13,12 @@ void main(){
 const fragmentSource = `
   precision mediump float;
   float getNumber(float inputNum){
-    return inputNum + 0.;
+    return inputNum + 1.;
   }
   void main(){
     float a = 0.;
     for (float i = -1.; i < 2.; i -= 1.){
-      a = getNumber(a) + a;
+      a = getNumber(a);
     }
     gl_FragColor = vec4(1, a / 2., 0, 1);
   }
