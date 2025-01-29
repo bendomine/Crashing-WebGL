@@ -1,7 +1,7 @@
-let canvas = document.getElementById('canvas1');
-let canvas2 = document.getElementById('canvas2');
+let canvas = document.getElementById('canvas');
+// let canvas2 = document.getElementById('canvas2');
 const gl = canvas.getContext('webgl');
-const gl2 = canvas2.getContext('webgl2');
+// const gl2 = canvas2.getContext('webgl2');
 
 const vertexSource = `
 void main(){
@@ -43,31 +43,31 @@ if (!gl.getProgramParameter(program, gl.LINK_STATUS)) alert("BBBBBBBB!!");
 
 gl.useProgram(program);
 
-const vShader2 = gl2.createShader(gl2.VERTEX_SHADER);
-gl2.shaderSource(vShader2, vertexSource);
-gl2.compileShader(vShader2);
-if (!gl2.getShaderParameter(vShader2, gl2.COMPILE_STATUS)) alert("aaaaaa");
+// const vShader2 = gl2.createShader(gl2.VERTEX_SHADER);
+// gl2.shaderSource(vShader2, vertexSource);
+// gl2.compileShader(vShader2);
+// if (!gl2.getShaderParameter(vShader2, gl2.COMPILE_STATUS)) alert("aaaaaa");
 
-const fShader2 = gl2.createShader(gl2.FRAGMENT_SHADER);
-gl2.shaderSource(fShader2, fragmentSource);
-gl2.compileShader(fShader2);
-if (!gl2.getShaderParameter(fShader2, gl2.COMPILE_STATUS)) alert("OH NO!!!");
-console.log(gl2.getShaderInfoLog(fShader2));
+// const fShader2 = gl2.createShader(gl2.FRAGMENT_SHADER);
+// gl2.shaderSource(fShader2, fragmentSource);
+// gl2.compileShader(fShader2);
+// if (!gl2.getShaderParameter(fShader2, gl2.COMPILE_STATUS)) alert("OH NO!!!");
+// console.log(gl2.getShaderInfoLog(fShader2));
 
-const program2 = gl2.createProgram();
-gl2.attachShader(program2, vShader2);
-gl2.attachShader(program2, fShader2);
-gl2.linkProgram(program2);
-if (!gl2.getProgramParameter(program2, gl2.LINK_STATUS)) alert("BBBBBBBB!!");
+// const program2 = gl2.createProgram();
+// gl2.attachShader(program2, vShader2);
+// gl2.attachShader(program2, fShader2);
+// gl2.linkProgram(program2);
+// if (!gl2.getProgramParameter(program2, gl2.LINK_STATUS)) alert("BBBBBBBB!!");
 
-gl2.useProgram(program2);
+// gl2.useProgram(program2);
+gl.drawArrays(gl.POINTS, 0, 1);
+// function draw(){
+//   gl.drawArrays(gl.POINTS, 0, 1);
+//   // gl2.drawArrays(gl2.POINTS, 0, 1);
+// }
 
-function draw(){
-  gl.drawArrays(gl.POINTS, 0, 1);
-  gl2.drawArrays(gl2.POINTS, 0, 1);
-}
-
-function main(){
-  setInterval(draw, 10);
-}
+// function main(){
+//   setInterval(draw, 10);
+// }
 //draw();
