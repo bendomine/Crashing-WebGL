@@ -70,3 +70,4 @@ function draw(){
 function main(){
   setInterval(draw, 10);
 }
+draw();
