@@ -29,11 +29,14 @@ function main() {
 	);
 	canvas.addEventListener('webglcontextrestored', init, false);
 	// let canvas2 = document.getElementById('canvas2');
-	const gl = canvas.getContext('webgl');
-	init(gl);
+	init();
 	// const gl2 = canvas2.getContext('webgl2');
 }
-function init(gl) {
+function init() {
+	console.log('init');
+	let canvas = document.getElementById('canvas');
+
+	let gl = canvas.getContext('webgl');
 	const vShader = gl.createShader(gl.VERTEX_SHADER);
 	gl.shaderSource(vShader, vertexSource);
 	gl.compileShader(vShader);
